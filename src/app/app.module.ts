@@ -9,7 +9,15 @@ import {RouterModule} from '@angular/router';
 import {routes} from './router';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {MatButtonModule, MatTableModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCard,
+  MatCardModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -21,13 +29,18 @@ import {PlatformModule} from '@angular/cdk/platform';
 import {ObserversModule} from '@angular/cdk/observers';
 import {PortalModule} from '@angular/cdk/portal';
 import { CommentComponent } from './components/comment/comment.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListPostComponent,
     PostDetailComponent,
-    CommentComponent
+    CommentComponent,
+    PageNotFoundComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,14 +50,16 @@ import { CommentComponent } from './components/comment/comment.component';
     MatNativeDateModule,
     MatRippleModule,
     MatTableModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatPaginatorModule,
+    MatSortModule,
     MatButtonModule,
     CdkTableModule,
     OverlayModule,
     PlatformModule,
+    FlexLayoutModule,
     PortalModule,
-    A11yModule,
-    BidiModule,
-    ObserversModule,
     RouterModule.forRoot(routes),
   ],
   providers: [PostService],
