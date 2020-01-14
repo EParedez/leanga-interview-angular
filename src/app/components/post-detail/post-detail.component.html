@@ -1,0 +1,18 @@
+
+
+<h2>Post ID : {{post?.id}}
+
+<ng-container *ngIf="lastUpdate">
+  Last Comment: {{ lastUpdate | date: 'dd/MM/yyyy HH:mm:ss' }}
+</ng-container>
+
+</h2>
+
+<h2>Content Post: </h2>
+
+<h1>{{post?.body}}</h1>
+
+
+<h2>Comments:</h2>
+
+<app-comment *ngIf="post" [postId]="post?.id" (changeDate)="changeDate($event)"></app-comment>

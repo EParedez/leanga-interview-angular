@@ -1,0 +1,12 @@
+
+<div *ngFor="let comment of comments">
+
+   <p>
+      Nombre: <strong>{{comment.name}}</strong> <br/>
+      Email: <strong>{{comment.email}}</strong> <br/>
+      Comentario: <strong>{{comment.body}}</strong> <br/>
+   </p>
+
+</div>
+
+<button mat-raised-button color="accent" (click)="emitEvent()">Emitir</button>
